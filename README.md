@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/secure-pipeline/rails-travis-example.svg?branch=master)](https://travis-ci.org/secure-pipeline/rails-travis-example)
+
 # Triage
 
 Track security in your applications.  Manage priorities.  Demonstrate security anti-patterns. 
@@ -25,3 +27,5 @@ Check out the SWTF project (https://bitbucket.org/mkonda/swtf/overview) which ru
 ## License
 
 Triage is licensed under the MIT license.  (http://opensource.org/licenses/mit-license.php)
+
+Triage is developed by Matt Konda and he has awesomely let us use it for the secure-pipeline project as an example. 
