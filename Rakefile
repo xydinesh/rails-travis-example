@@ -6,6 +6,9 @@ require File.expand_path('../config/application', __FILE__)
 
 Triage::Application.load_tasks
 
+Rake::Task[:default].clear
+
+task :default => ["secure_pipeline:gauntlt"]
 
 namespace :secure_pipeline do
   task :gauntlt do
@@ -14,4 +17,3 @@ namespace :secure_pipeline do
 end
 
 
-task :default => ["secure_pipeline:gauntlt"]
