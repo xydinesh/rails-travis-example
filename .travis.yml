@@ -6,4 +6,5 @@ before_script:
   - set_token.sh
   - bundle exec rake db:migrate
 script: 
+  - rails s
   - bundle exec rake
