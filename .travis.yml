@@ -5,5 +5,5 @@ before_script:
   - ./set_token.sh
   - bundle exec rake db:migrate
 script: 
-  - bundle exec rails start
+  - bundle exec rails server
   - bundle exec rake secure_pipeline:gauntlt
