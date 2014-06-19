@@ -3,7 +3,7 @@ rvm:
   - 1.9.3
   - 2.1
 before_script: 
-  - set_token.sh
+  - ./set_token.sh
   - bundle exec rake db:migrate
 script: 
   - rails s
