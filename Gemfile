@@ -58,3 +58,9 @@ gem "execjs"
 gem "therubyracer"
 gem "secure_headers"
 gem "service_manager"
+
+group :secure_pipeline do
+  gem 'gauntlt', '1.0.9'
+  gem 'arachni', '0.4.6'
+end
+
