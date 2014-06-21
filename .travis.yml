@@ -3,19 +3,20 @@ rvm:
   - 2.0.0
 before_install:
   - git submodule update --init --recursive
-  - echo $TRAVIS_BUILD_DIR
   - sudo apt-get install nmap
   - sudo apt-get install wget
   - sudo apt-get install libcurl4-openssl-dev
-  - 'cd vendor && wget https://github.com/iSECPartners/sslyze/releases/download/release-0.9/sslyze-0_9-linux64.zip && unzip sslyze-0_9-linux64.zip && cd ..'
-  - export SSLYZE_PATH="/home/travis/build/gauntlt/gauntlt-demo/vendor/sslyze-0_9-linux64/sslyze.py"
-  - export SQLMAP_PATH="/home/travis/build/gauntlt/gauntlt-demo/vendor/sqlmap/sqlmap.py"
   - 'cd vendor/Garmr && sudo python setup.py install && cd ../..'
+  - 'cd vendor && wget https://github.com/iSECPartners/sslyze/releases/download/release-0.9/sslyze-0_9-linux64.zip && unzip sslyze-0_9-linux64.zip && cd ..'
   - 'cd vendor && wget http://downloads.sourceforge.net/project/dirb/dirb/2.03/dirb203.tar.gz && tar xvfz dirb203.tar.gz && cd dirb && ./configure && make && sudo cp dirb /usr/local/bin/ && cd ../../'
-  - export DIRB_WORDLISTS="/home/travis/build/gauntlt/gauntlt/vendor/dirb/wordlists"
+  - export SSLYZE_PATH="$TRAVIS_BUILD_DIR/vendor/sslyze-0_9-linux64/sslyze.py"
+  - export SQLMAP_PATH="$TRAVIS_BUILD_DIR/vendor/sqlmap/sqlmap.py"
+  - export DIRB_WORDLISTS="$TRAVIS_BUILD_DIR/vendor/dirb/wordlists"
 before_script:
   - ./set_token.sh
   - bundle exec rake db:migrate
 script: 
   - ./start.sh
+  - wget localhost:3000
+  - cat index.html
   - bundle exec rake secure_pipeline:network_attacks
