@@ -1,9 +1,9 @@
 language: ruby
 rvm:
-  - 2.1.1
+  - 2.0.0
 before_script: 
   - ./set_token.sh
   - bundle exec rake db:migrate
 script: 
-  - ./.travis-start.sh
+  - ./start.sh
   - bundle exec rake secure_pipeline:gauntlt
