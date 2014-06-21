@@ -1,31 +1,32 @@
-[![Build Status](https://travis-ci.org/secure-pipeline/rails-travis-example.svg?branch=master)](https://travis-ci.org/secure-pipeline/rails-travis-example)
+[![Build Status](https://travis-ci.org/secure-pipeline/rails-travis-example.svg?branch=master)](https://travis-ci.org/secure-pipeline/rails-travis-example) [![Code Climate](https://codeclimate.com/github/secure-pipeline/rails-travis-example.png)](https://codeclimate.com/github/secure-pipeline/rails-travis-example)
 
-# Triage
+# Rails Travis Example
 
-Track security in your applications.  Manage priorities.  Demonstrate security anti-patterns. 
+## Overview
+This repo contains a Ruby on Rails Application that is being tested with Travis CI.  Travis CI is running security tests and attacks against the application. This is meant to be an example of how to setup security testing inside your CI environment.
 
-*Triage is NOT secure.*  It is an application intended to illustrate security problems in Rails applications.
+## About the Ruby on Rails Application
 
-## Branches
+The app, Triage, was written by [Matt Konda](https://github.com/mkonda) and he awesomely donated it to be used for the secure pipeline project as the demo rails application.  Thanks Matt! Please see [Triage's README.md](https://github.com/Jemurai/triage/blob/master/README.md) for more infomation on the application. 
 
-Note that Triage *intentionally* had two branches:  
+### Branches
+
+Note that Triage *intentionally* has two branches:  
 * security_errors :  contains many security holes
 * security_fixes : attempts to illustrate how to fix the holes
 
-## Setup
+### Setup
 
 Once cloned, you should only have to: 
 - bundle install
 - rake db:migrate
+- ./set_token.sh
+- bundle exec start_services
 
-Depending on which branch you clone, you _might_ need to generate a new secret token (rake secret) and put it in your config/initializers/secret_token.rb.
-
-## Related Projects
-
-Check out the SWTF project (https://bitbucket.org/mkonda/swtf/overview) which runs security tests against Triage.
+The app should be responding on http://localhost:3000
 
 ## License
 
-Triage is licensed under the MIT license.  (http://opensource.org/licenses/mit-license.php)
-
-Triage is developed by Matt Konda and he has awesomely let us use it for the secure-pipeline project as an example. 
+This repo and the entire secure-pipeline organization is licensed under the [MIT license](http://opensource.org/licenses/mit-license.php).
+Triage is licensed under the [MIT license](http://opensource.org/licenses/mit-license.php).
+Please see Triage's main repo for more information: https://github.com/Jemurai/triage
