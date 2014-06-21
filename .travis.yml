@@ -15,8 +15,7 @@ before_install:
 before_script:
   - ./set_token.sh
   - bundle exec rake db:migrate
-script: 
   - bundle exec rails s -d
-  - wget localhost:3000
-  - cat index.html
+script: 
   - bundle exec rake secure_pipeline:network_attacks
+  - bundle exec rake secure_pipeline:ssl_attacks

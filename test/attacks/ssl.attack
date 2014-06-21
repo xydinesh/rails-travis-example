@@ -1,0 +1,18 @@
+@slow
+Feature: Run sslyze against a target
+
+Background:
+  Given "sslyze" is installed
+  And the following profile:
+    | name     | value      |
+    | hostname | google.com |
+
+Scenario: Ensure no anonymous certificates
+  When I launch a "sslyze" attack with:
+    """
+    python <sslyze> --heartbleed <hostname>:443
+    """
+  Then the output should match:
+    """ 
+    OpenSSL Heartbleed:\s+NOT vulnerable
+    """

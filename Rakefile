@@ -14,6 +14,9 @@ namespace :secure_pipeline do
   task :network_attacks do
     sh 'gauntlt ./test/attacks/assert-ports.attack'
   end
+  task :ssl_attacks do
+    sh 'gauntlt ./test/attacks/ssl.attack'
+  end
 end
 
 
