@@ -16,7 +16,7 @@ before_script:
   - ./set_token.sh
   - bundle exec rake db:migrate
 script: 
-  - ./start.sh
+  - bundle exec rails s -d
   - wget localhost:3000
   - cat index.html
   - bundle exec rake secure_pipeline:network_attacks
