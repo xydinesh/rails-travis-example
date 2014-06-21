@@ -1,0 +1,13 @@
+@slow
+Feature: Checks for email addresses disclosed on our company website 'my_domain.com'. We know that hackers usually target internal email addresses and attempt to login using large password dictionaries.
+
+Scenario: Using arachni, run the email checking module to find any addresses being disclosed from our company
+  Given "arachni" is installed
+  And the following profile:
+     | name                | value                          |
+     | url                 | http://localhost:3000          |
+  When I launch an "arachni" attack with:
+  """
+  arachni --modules=emails <url>
+  """
+  Then the output should not match /Matched string:\s+.*@my_domain.com/
