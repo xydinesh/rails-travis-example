@@ -8,11 +8,11 @@ Triage::Application.load_tasks
 
 Rake::Task[:default].clear
 
-task :default => ["secure_pipeline:gauntlt"]
+task :default => ["secure_pipeline:network_attacks"]
 
 namespace :secure_pipeline do
-  task :gauntlt do
-    sh 'echo "JAMES"'
+  task :network_attacks do
+    sh 'gauntlt ./test/attacks/assert-ports.attack'
   end
 end
 
