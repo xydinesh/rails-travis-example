@@ -22,11 +22,12 @@ namespace :secure_pipeline do
   end
   task :information_leakage do
     sh 'gauntlt ./test/attacks/email_leakage.attack'
+    sh 'gauntlt ./test/attacks/backdoors.attack'
   end
   task :sql_injection do
     sh 'gauntlt ./test/attacks/sql_injection.attack'
   end
-  task :all => [:network_attack, :ssl_attack, :xss, :information_leakage, :sql_injection]
+  task :all => [:network_attack, :ssl_attack, :xss, :information_leakage]
 end
 
 

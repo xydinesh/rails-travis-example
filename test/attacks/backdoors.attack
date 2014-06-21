@@ -1,0 +1,13 @@
+@slow
+Feature: Check for common backdoors that get installed, we should also run this against our running system regularly
+
+Scenario: Using arachni, look for for common backdoors (c99.php, lol.php, shell.php, ...)
+Given "arachni" is installed
+  And the following profile:
+     | name                | value                          |
+     | url                 | http://localhost:3000          |
+  When I launch an "arachni" attack with:
+  """
+  arachni --modules=backdoors <url>
+  """
+  Then the output should contain "0 issues were detected."
