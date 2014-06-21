@@ -1,4 +1,4 @@
-@slow
+@reallyslow
 Feature: Checks for email addresses disclosed on our company website 'my_domain.com'. We know that hackers usually target internal email addresses and attempt to login using large password dictionaries.
 
 Scenario: Using arachni, run the email checking module to find any addresses being disclosed from our company
@@ -11,3 +11,5 @@ Scenario: Using arachni, run the email checking module to find any addresses bei
   arachni --modules=emails <url>
   """
   Then the output should not match /Matched string:\s+.*@my_domain.com/
+# For more infomation on output parsing and Regex in Gauntlt, please see
+# https://github.com/gauntlt/gauntlt/wiki/Output-parsing-with-Gauntlt

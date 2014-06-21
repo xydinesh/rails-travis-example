@@ -1,0 +1,18 @@
+@reallyslow
+Feature: Run sqlmap against our signup page
+  # See:
+  #   https://github.com/sqlmapproject/sqlmap/wiki/Usage
+
+Scenario: Identify SQL injection vulnerabilities
+  Given "sqlmap" is installed
+  And the following profile:
+    | name       | value                                    |
+    | target_url | http://localhost:3000/users/password/new |
+  When I launch a "sqlmap" attack with:
+    """
+    python <sqlmap> -u <target_url> --technique ES --os linux --batch --forms --dbms sqlite
+    """
+  Then the output should contain:
+    """
+    all tested parameters appear to be not injectable
+    """

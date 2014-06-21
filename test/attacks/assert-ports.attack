@@ -30,3 +30,5 @@ Feature: check to make sure that the server is starting on the correct port
 #
 #      Nmap done
 #      """
+# For more Regex and output parsing options, please see the Gauntlt wiki
+# https://github.com/gauntlt/gauntlt/wiki/Output-parsing-with-Gauntlt
