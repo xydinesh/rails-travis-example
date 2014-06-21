@@ -8,7 +8,7 @@ Triage::Application.load_tasks
 
 Rake::Task[:default].clear
 
-task :default => ["secure_pipeline:network_attacks"]
+task :default => ['secure_pipeline:network_attacks', 'secure_pipeline:ssl_attacks', 'secure_pipeline:xss_attacks']
 
 namespace :secure_pipeline do
   task :network_attacks do
@@ -16,6 +16,9 @@ namespace :secure_pipeline do
   end
   task :ssl_attacks do
     sh 'gauntlt ./test/attacks/ssl.attack'
+  end
+  task :xss_attacks do
+    sh 'gauntlt ./test/attacks/xss.attack'
   end
 end
 
