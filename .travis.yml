@@ -21,3 +21,4 @@ script:
   - bundle exec rake secure_pipeline:ssl_attack
   - bundle exec rake secure_pipeline:xss
   - bundle exec rake secure_pipeline:information_leakage
+  - bundle exec rake secure_pipeline:sql_injection

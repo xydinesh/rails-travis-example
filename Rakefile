@@ -27,7 +27,7 @@ namespace :secure_pipeline do
   task :sql_injection do
     sh 'gauntlt ./test/attacks/sql_injection.attack'
   end
-  task :all => [:network_attack, :ssl_attack, :xss, :information_leakage]
+  task :all => [:network_attack, :ssl_attack, :xss, :information_leakage, :sql_injection]
 end
 
 
