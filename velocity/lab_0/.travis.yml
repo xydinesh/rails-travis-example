@@ -1,9 +1,11 @@
 language: ruby
 rvm:
   - 2.0.0
+before_install:
+  - git submodule update --init --recursive
 before_script:
   - ./set_token.sh
   - bundle exec rake db:migrate
   - bundle exec rails s -d
 script: 
-  - 'echo "Build Success"
+  - echo "Build Success"
