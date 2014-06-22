@@ -23,6 +23,7 @@ namespace :secure_pipeline do
   task :information_leakage do
     sh 'gauntlt ./test/attacks/email_leakage.attack'
     sh 'gauntlt ./test/attacks/backdoors.attack'
+    sh 'gauntlt ./test/attacks/dirb.attack'
   end
   task :sql_injection do
     sh 'gauntlt ./test/attacks/sql_injection.attack'

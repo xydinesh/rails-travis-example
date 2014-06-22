@@ -1,0 +1,22 @@
+@slow
+Feature: Run dirb scan on a URL to check for endpoints that shouldn't be exposed. This is great to make sure that our internal REST services don't somehow migrate to this external app. We can create custom wordlists with our organization data too.
+
+Scenario: Use dirb to scan a website for the vulns/tests.txt wordlist from dirb.  This is a small list. 
+
+  Given "dirb" is installed
+  And the following profile:
+     | name                | value                          |
+     | hostname            | http://localhost:3000          |
+     | dirb_wordlists_path | Overwritten by $DIRB_WORDLISTS |
+     | wordlist            | vulns/tests.txt                |
+  When I launch a "dirb" attack with:
+  """
+  dirb <hostname> <dirb_wordlists_path>/<wordlist> 
+  """
+  Then the output should contain:
+  """
+  FOUND: 0
+  """
+
+# The DIRB_WORDLISTS environment variable must be set in your path.
+# You can use different wordlists by changing the environment variable.
