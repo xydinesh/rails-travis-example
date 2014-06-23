@@ -5,7 +5,7 @@ This is Lab 1 for Velocity 2014 Tutorial: Battle-tested Code without the Battle.
 * Complete Lab 0. 
 
 ## Goals of this Lab
-* Implement a network check using nmap and a Heartbleed check using ssl.
+* Implement a network check using nmap and a Heartbleed check using SSLyze.
 
 # LAB 1
 * In your forked repo, read the repo's Travis Config `.travis.yml`
@@ -16,5 +16,6 @@ This is Lab 1 for Velocity 2014 Tutorial: Battle-tested Code without the Battle.
 * Commit and watch your build status.
 
 ## More information
+* [The Lifecycle of a Travis CI Build](http://docs.travis-ci.com/user/build-lifecycle/)
 * Gauntlt Wiki: [Assert your network services from the outside in using gauntlt](https://github.com/gauntlt/gauntlt/wiki/Assert-your-network-services-from-the-outside-in-using-gauntlt)
 * SSLyze [repo](https://github.com/iSECPartners/sslyze)
