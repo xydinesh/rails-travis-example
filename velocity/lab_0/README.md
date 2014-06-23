@@ -1,4 +1,4 @@
-# Velocity 2014 Tutorial: Battle-tested Code without the Battle 
+# Battle-tested Code without the Battle 
 Welcome to the Velocity 2014 Tutorial: Battle-tested Code Without the Battle--Security Testing and Continuous Integration.  For this workshop we will be working on two different Continuous Integration systems to show how to integrate security testing in a CI/CD environment. For the first half of the workshop we will be using Travis CI and for the second half of the workshop we will be using Jenkins. 
 
 ## Requirements
