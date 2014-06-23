@@ -18,10 +18,12 @@ Note that Triage *intentionally* has two branches:
 ### Setup
 
 Once cloned, you should only have to: 
-- bundle install
-- rake db:migrate
-- ./set_token.sh
-- bundle exec start_services
+```bash
+$ bundle install
+$ rake db:migrate
+$ ./set_token.sh
+$ bundle exec start_services
+```
 
 The app should be responding on http://localhost:3000
 

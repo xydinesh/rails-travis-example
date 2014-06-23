@@ -12,7 +12,7 @@ Welcome to the Velocity 2014 Tutorial: Battle-tested Code Without the Battle--Se
 * Introduction to the [Secure Pipeline project](https:github.com/secure-piepeline/secure-pipeline) and how you can get involved
 
 # LAB 0
-* Make sure you can have an account with Github and Travis CI
+* Make sure you can have an account with Github and Travis CI.
 * Go to [https://github.com/secure-pipeline/rails-travis-example](https://github.com/secure-pipeline/rails-travis-example) and fork the repo.
+* Read [lab_0/.travis.yml](https://github.com/secure-pipeline/rails-travis-example/blob/master/velocity/lab_0/.travis.yml) and meditate on the truth therein.
 * Thats it.
-
