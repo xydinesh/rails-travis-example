@@ -19,3 +19,4 @@ This is Lab 1 for Velocity 2014 Tutorial: Battle-tested Code without the Battle.
 * [The Lifecycle of a Travis CI Build](http://docs.travis-ci.com/user/build-lifecycle/)
 * Gauntlt Wiki: [Assert your network services from the outside in using gauntlt](https://github.com/gauntlt/gauntlt/wiki/Assert-your-network-services-from-the-outside-in-using-gauntlt)
 * SSLyze [repo](https://github.com/iSECPartners/sslyze)
+* [Regex and Output parsing with Gauntlt](https://github.com/gauntlt/gauntlt/wiki/Output-parsing-with-Gauntlt)
