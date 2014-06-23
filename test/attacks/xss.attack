@@ -1,10 +1,12 @@
 @slow
 Feature: Look for cross site scripting (xss) using arachni against a URL
 
-Scenario: Using arachni, look for cross site scripting and verify no issues are found
+Background:
   Given "arachni" is installed
-  And the following profile:
-     | name                | value                          |
+
+Scenario: Using arachni, look for cross site scripting and verify no issues are found on the password reset page
+  Given the following profile:
+     | name                | value                                      |
      | url                 | http://localhost:3000/users/password/new   |
   When I launch an "arachni" attack with:
   """
@@ -13,8 +15,7 @@ Scenario: Using arachni, look for cross site scripting and verify no issues are 
   Then the output should contain "0 issues were detected."
 
 Scenario: On the signup page, use arachni to look for cross site scripting using the full xss check
-  Given "arachni" is installed
-  And the following profile:
+  Given the following profile:
      | name                | value                                 |
      | url                 | http://localhost:3000/users/sign_up   |
   When I launch an "arachni-full_xss" attack
